@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Modificar Cita</h2>
+<form method="POST">
+    <input type="text" name="mascota" value="{{ paciente.mascota }}"
+           class="form-control mb-2" required>
+    <input type="text" name="propietario" value="{{ paciente.propietario }}"
+           class="form-control mb-2" required>
+    <select name="especie" class="form-control mb-2">
+        <option value="Perro"  {% if paciente.especie == 'Perro'  %}selected{% endif %}>Perro</option>
+        <option value="Gato"   {% if paciente.especie == 'Gato'   %}selected{% endif %}>Gato</option>
+        <option value="Ave"    {% if paciente.especie == 'Ave'    %}selected{% endif %}>Ave</option>
+        <option value="Otro"   {% if paciente.especie == 'Otro'   %}selected{% endif %}>Otro</option>
+    </select>
+    <input type="date" name="fecha" value="{{ paciente.fecha }}"
+           class="form-control mb-2" required>
+    <button class="btn btn-success">Actualizar</button>
+    <a href="/" class="btn btn-secondary">Volver</a>
+</form>
+{% endblock %}

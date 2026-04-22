@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agendar Cita</h2>
+<form method="POST">
+    <input type="text" name="mascota" placeholder="Nombre de la mascota"
+           class="form-control mb-2" required>
+
+    <input type="text" name="propietario" placeholder="Nombre del propietario"
+           class="form-control mb-2" required>
+    <select name="especie" class="form-control mb-2">
+        <option value="Perro">Perro</option>
+        <option value="Gato">Gato</option>
+        <option value="Ave">Ave</option>
+        <option value="Otro">Otro</option>
+    </select>
+    <input type="date" name="fecha" class="form-control mb-2" required>
+    <button class="btn btn-success">Guardar</button>
+    <a href="/" class="btn btn-secondary">Volver</a>
+</form>
+{% endblock %}
